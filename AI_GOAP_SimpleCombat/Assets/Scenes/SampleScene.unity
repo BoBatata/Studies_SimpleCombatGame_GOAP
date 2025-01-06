@@ -747,7 +747,7 @@ Transform:
   m_GameObject: {fileID: 1920349198587151771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.45, y: 0.45, z: 2.0178883}
+  m_LocalPosition: {x: 6.44, y: 0.45, z: 9.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -764,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 8766187899420851366}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 1.64, z: 0}
+  m_LocalPosition: {x: 24.07, y: 1.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -820,7 +820,9 @@ GameObject:
   - component: {fileID: 1614288378114364851}
   - component: {fileID: 1920349198587151773}
   - component: {fileID: 1920349198587151775}
+  - component: {fileID: 1920349198587151777}
   - component: {fileID: 1920349198587151772}
+  - component: {fileID: 1920349198587151776}
   m_Layer: 0
   m_Name: Slime_Monster
   m_TagString: Untagged
@@ -882,6 +884,44 @@ MonoBehaviour:
   targetTag: 
   duration: 0
   preConditions: []
+  afterEffects:
+  - key: playerOnSight
+    value: 0
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &1920349198587151776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920349198587151771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fadcf6aba9c56aa4eb719a36127ee2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAgent: {fileID: 1920349198587151772}
+--- !u!114 &1920349198587151777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920349198587151771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38b64b34edcfc84da274eea2c7fc2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Go To Player
+  cost: 1
+  target: {fileID: 0}
+  targetTag: Player
+  duration: 0
+  preConditions:
+  - key: playerOnSight
+    value: 0
   afterEffects:
   - key: damagePlayer
     value: 0
