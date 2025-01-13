@@ -63,7 +63,7 @@ public sealed class GWorld
     static GWorld()
     {
         world = new WorldStates();
-        players = new ResourceQueue("Player", "PlayerIsVisible", world);
+        players = new ResourceQueue("", "", world);
         resources.Add("players", players);
         //cubicles = new ResourceQueue("Cubicle", "FreeCubicle", world);
         //resources.Add("cubicles", cubicles);
