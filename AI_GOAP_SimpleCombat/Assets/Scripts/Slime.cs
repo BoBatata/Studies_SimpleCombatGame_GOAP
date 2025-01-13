@@ -21,7 +21,7 @@ public class Slime : GAgent
         SubGoal s2 = new SubGoal("targetInRange", 1, false);
         goals.Add(s2, 3);
 
-        SubGoal s3 = new SubGoal("lookForTarget", 1, true);
+        SubGoal s3 = new SubGoal("wanderToPoint", 1, false);
         goals.Add(s3, 1);
 
         targetSpotted = false;
@@ -33,6 +33,7 @@ public class Slime : GAgent
 
     private void Update()
     {
+
         if (!targetSpotted)
         {
             TargetOnSight();
@@ -70,8 +71,16 @@ public class Slime : GAgent
             }
         }
         beliefs.ModifyState("TargetIsVisible", 0);
-        //GWorld.Instance.GetWorld().ModifyState("TargetIsVisible", 1);
         targetSpotted = true;
         return true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        Gizmos.color = Color.white;
+        float distance = Vector3.Distance(this.gameObject.transform.position, attackPoint.transform.position);
+        Gizmos.DrawWireSphere(this.gameObject.transform.position, distance + attackRadius);
     }
 }

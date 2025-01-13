@@ -19,7 +19,6 @@ public class AttackTarget : GAction
 
     public override bool PostPerform()
     {
-        //GWorld.Instance.GetWorld().ModifyState("TargetOnRange", -1);
         beliefs.ModifyState("TargetOnRange", -1);
         return true;
     }

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class MeleeAttackBehavior : MonoBehaviour
 {
-    //Debug
-    private Color color;
-
     [Header("Attack Variables")]
     private Transform attackPoint;
     private float attackRadius;
@@ -21,7 +18,6 @@ public class MeleeAttackBehavior : MonoBehaviour
         attackRadius = agent.attackRadius;
         attackMask = agent.attackMask;
 
-        color = Color.green;
         canAttack = false;
     }
 
@@ -30,10 +26,6 @@ public class MeleeAttackBehavior : MonoBehaviour
         if (canAttack)
         {
             AttackPlayer();
-        }
-        else
-        {
-            color = Color.green;
         }
     }
 
@@ -45,18 +37,9 @@ public class MeleeAttackBehavior : MonoBehaviour
             if(p.TryGetComponent(out Player player))
             {
                 print("damage!");
-                color = Color.red;
                 player.TakeDamage();
             }
         }
 
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = color;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
-        Gizmos.color = Color.white;
-        float distance = Vector3.Distance(this.gameObject.transform.position, attackPoint.transform.position);
-        Gizmos.DrawWireSphere(this.gameObject.transform.position, distance + attackRadius);
     }
 }
