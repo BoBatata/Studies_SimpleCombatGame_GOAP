@@ -52,7 +52,7 @@ public sealed class GWorld
 {
     private static readonly GWorld instance = new GWorld();
     private static WorldStates world;
-    //private static ResourceQueue patients;
+    private static ResourceQueue players;
     //private static ResourceQueue cubicles;
     //private static ResourceQueue offices;
     //private static ResourceQueue toilets;
@@ -63,8 +63,8 @@ public sealed class GWorld
     static GWorld()
     {
         world = new WorldStates();
-        //patients = new ResourceQueue("", "", world);
-        //resources.Add("patients", patients);
+        players = new ResourceQueue("", "", world);
+        resources.Add("players", players);
         //cubicles = new ResourceQueue("Cubicle", "FreeCubicle", world);
         //resources.Add("cubicles", cubicles);
         //offices = new ResourceQueue("Office", "FreeOffice", world);
