@@ -13,8 +13,8 @@ public class WanderAround : GAction
 
     public override bool PrePerform()
     {
-        float distance = Vector3.Distance(this.gameObject.transform.position, slime.attackPoint.transform.position);
-        float range = slime.attackRadius + distance;
+        //float distance = Vector3.Distance(this.gameObject.transform.position, slime.attackPoint.transform.position);
+        //float range = slime.attackRadius + distance;
         Vector3 randomPos = new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         target = Instantiate(pointPrefab, randomPos, Quaternion.identity);
         return true;

@@ -658,7 +658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -688,8 +688,8 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 5
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -1401,6 +1401,7 @@ GameObject:
   - component: {fileID: 1920349198587151777}
   - component: {fileID: 1920349198587151778}
   - component: {fileID: 1920349198587151780}
+  - component: {fileID: 1920349198587151781}
   - component: {fileID: 1920349198587151779}
   - component: {fileID: 1920349198587151772}
   - component: {fileID: 1920349198587151776}
@@ -1552,6 +1553,31 @@ MonoBehaviour:
   agent: {fileID: 0}
   running: 0
   pointPrefab: {fileID: 6791620697344494566, guid: 168d9359e6ee77f41a2fe0417c287c42, type: 3}
+--- !u!114 &1920349198587151781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920349198587151771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4aa9585588581479b8a827cf697a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Retreat
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions:
+  - key: didAttack
+    value: 0
+  - key: 
+    value: 0
+  afterEffects: []
+  agent: {fileID: 0}
+  running: 0
 --- !u!1 &2066896392699266049
 GameObject:
   m_ObjectHideFlags: 0
